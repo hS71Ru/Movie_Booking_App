@@ -9,7 +9,9 @@ const userRouter=require('./routes/user-routes');
 dotenv.config();
 
 //middleware
-app.use("/user", userRouter)
+app.use(express.json());
+app.use("/user", userRouter);
+
 
 
 //created first API ,just for testing purpose.

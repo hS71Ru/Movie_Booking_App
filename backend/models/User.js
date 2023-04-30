@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
 
-const Schema=mongoose.Schema;
+//const Schema=mongoose.Schema;
 const UserSchema=new mongoose.Schema({
     name:{
         type: String,
@@ -18,5 +18,5 @@ const UserSchema=new mongoose.Schema({
         minLenght: 6
     }
 })
-const user= mongoose.model('User',UserSchema);
+const user= mongoose.model('user',UserSchema);
 module.exports=user;
