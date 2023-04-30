@@ -1,0 +1,25 @@
+//hs72ru
+//Ud0DWBxIpfipEwVJ
+
+const express=require('express');
+const app = express();
+const mongoose=require('mongoose');
+const dotenv=require('dotenv');
+const userRouter=require('./routes/user-routes');
+dotenv.config();
+
+//middleware
+app.use("/user", userRouter)
+
+
+//created first API ,just for testing purpose.
+// app.use("/",(req,res,next)  => {
+//     res.end("<h1>Welcome Guys</h1>");    //method to fetch api routes
+// } ) 
+
+mongoose.connect('mongodb+srv://hs72ru:Ud0DWBxIpfipEwVJ@cluster1.ndekvys.mongodb.net/Movies?retryWrites=true&w=majority')
+
+app.listen(3500, ()=>{
+    console.log('Connected to localhost post ${3500}');
+})
+
