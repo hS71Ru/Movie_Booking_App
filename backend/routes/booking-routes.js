@@ -1,9 +1,8 @@
 const express=require('express');
-const{ }=require('../controllers/booking-controller');
-
+const{Booking, deleteBooking }=require('../controllers/booking-controller');
 const bookingRouter=express.Router();
 
-bookingRouter.post('/',);
-bookingRouter.post('/login',adminLogin);
+bookingRouter.post('/',Booking);
+bookingRouter.delete('/:id',deleteBooking);
 
 module.exports= bookingRouter;
