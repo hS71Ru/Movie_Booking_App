@@ -15,6 +15,7 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/movie", movieRouter);
+app.use("/booking", bookingRouter);
 
 
 
@@ -26,6 +27,6 @@ app.use("/movie", movieRouter);
 mongoose.connect('mongodb+srv://hs72ru:Ud0DWBxIpfipEwVJ@cluster1.ndekvys.mongodb.net/Movies?retryWrites=true&w=majority')
 
 app.listen(3500, ()=>{
-    console.log('Connected to localhost post ${3500}');
+    console.log(`Connected to localhost post ${3500}`);
 })
 
