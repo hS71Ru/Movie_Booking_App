@@ -3,28 +3,38 @@ const movieSchema = new mongoose.Schema({
 
 
     title: {
-        type:'String',
+        type:String,
         required: true
     },
 
     description:{
-        type:'String',
+        type:String,
         required: true
     },
 
+    actors:[{
+        type:String,
+        required:true
+    }] ,
+
     releaseDate:{
-        typr:'date',
+        type:Date,
+        required:true
+    },
+
+    posterUrl:{
+        type:String,
         required:true
     },
 
     featured:{
-        type:'boolean',
+        type:Boolean,
         
     },
 
-    bookings:({
-        type:'String',
-    }),
+    bookings:[{
+        type:String,
+    }],
 
     admin:{
             type:'String',
@@ -34,5 +44,5 @@ const movieSchema = new mongoose.Schema({
     
 }) 
 
-const Movies = mongoose.model('Admin', movieSchema);
+const Movie = mongoose.model('movie', movieSchema);
 module.exports = Movie;

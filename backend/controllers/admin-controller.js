@@ -69,7 +69,7 @@ const adminLogin=async(req,res,next)=>{
         return res.status(400).json({message:"Incorrect Password"})
     }
 
-    const token=jwt.sign({id:existingAdmin._id},process.env.SECRET_KEY ,{expiresIn:"7d"})
+    const token=jwt.sign({id:existingAdmin._id},process.env.SECRET_KEY ,{expiresIn:"7d"});
     return res.status(200).json({message:"Authentication Successful",token,id:existingAdmin._id})
 }
 
