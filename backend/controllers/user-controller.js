@@ -31,7 +31,7 @@ const hashedPassword=bcrypt.hashSync(password);
     let users;
     try{
         users =new user({name,email,password:hashedPassword});
-        users=await user.save();
+        await users.save();
     } catch(err){
         return console.log(err);
     }
@@ -40,7 +40,7 @@ const hashedPassword=bcrypt.hashSync(password);
         return res.status(500).json({message:"Unexpected Error Occurred"})
     }
 
-    return res.status(201).json({users});
+    return res.status(201).json({user});
 }
 
 const updateUser=async(req,res,next)=>{
