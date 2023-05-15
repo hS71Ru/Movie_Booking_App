@@ -1,9 +1,20 @@
-import Header from "./components/Header";
+import React from 'react'
+import {AppBar,Box, Toolbar} from '@mui/material'
+import TheaterComedySharpIcon from '@mui/icons-material/TheaterComedySharp';
 
-function App(){
-    return <div>
-        <Header/>
-    </div>
+const Header=()=>{
+    return (
+    <AppBar>
+        <Toolbar>
+            <Box width={'20%'}>
+            <TheaterComedySharpIcon />
+            </Box>
+        </Toolbar>
+        
+    </AppBar>
+    )
+
 }
 
-export default App;
+
+export default Header
