@@ -14,7 +14,7 @@ const Header = () =>{
             .catch((err) => console.log(err));
     }, []);
     return(
-        <AppBar position='Sticky' sx={{bgcolor:"#2b2d42"}}>
+        <AppBar position="Sticky" sx={{bgcolor:"#2b2d42"}}>
             <Toolbar>
                 <Box width={'20%'}>
                     <TheaterComedyIcon />
