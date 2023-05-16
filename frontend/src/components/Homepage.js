@@ -14,7 +14,7 @@ const Homepage = () => {
 return (
         <Box width={'100%'} height={'100%'} margin={"auto"} marginTop={2}>
           <Box margin={"auto"} width={'70%'} height={'40vh'} padding={2}>
-          <img src="https://i0.wp.com/www.newsbugz.com/wp-content/uploads/2020/12/salaar-movie-1.jpg?resize=700%2C225&ssl=1" alt='' width={"100%"} height={"100%"} />
+          <img src="https://staticimg.amarujala.com/assets/images/2022/10/07/750x506/aathaparashha_1665141913.jpeg" alt='' width={"100%"} height={"100%"} />
 
           </Box>
           <Box padding={5} margin="auto">
