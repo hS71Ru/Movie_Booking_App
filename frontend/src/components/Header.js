@@ -6,10 +6,10 @@ import { getAllMovie } from '../Api-helpers/api-helpers';
 
 const Header = () =>{
     const [value , setvalue]=useState(0);
-    const [movies]=useState([])
+    const [movies,setmovies]=useState([])
     useEffect(()=>{
         getAllMovie()
-            .then((data) => console.log(data.movies))
+            .then((data) => {setmovies(data.movies)})
             .catch((err) => console.log(err));
     }, []);
     return(

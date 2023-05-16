@@ -10,13 +10,21 @@ const adminRouter = require('./routes/admin-routes');
 const movieRouter = require('./routes/movie-routes');
 const bookingRouter = require('./routes/booking-routes');
 dotenv.config();
-
+const cors=require('cors');
+app.use(cors());
+app.use((req,res,next)=>{
+    res.header('Acess-Control-Allow-Origin','*');
+    res.header('Acess-Control-Allow-Methods','GET','POST','PUT','DELETE');
+    res.header('Acess-Control-Allow-Headers','Content-Type,Authorization');
+    next();
+})
 //middleware
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/movie", movieRouter);
 app.use("/booking", bookingRouter);
+
 
 
 

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const getAllMovie = async() => {
-    const res=await axios.get("http://localhost:3500/movie")
+    const res=await axios.get("movie/")
     .catch((err)=> {
     console.log(err)
 });
