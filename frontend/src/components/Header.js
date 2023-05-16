@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react'
-import {AppBar, Autocomplete,Box,Link,Tab,Tabs,TextField,Toolbar} from '@mui/material'
+import {AppBar, Autocomplete,Box,Tab,Tabs,TextField,Toolbar} from '@mui/material'
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import { getAllMovie } from '../Api-helpers/api-helpers';
+import {Link} from 'react-router-dom';
 
 
 const Header = () =>{

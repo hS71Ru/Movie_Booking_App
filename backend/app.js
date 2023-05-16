@@ -10,6 +10,12 @@ const adminRouter = require('./routes/admin-routes');
 const movieRouter = require('./routes/movie-routes');
 const bookingRouter = require('./routes/booking-routes');
 dotenv.config();
+
+
+//Port Number
+//const PORT=process.env.PORT ||3500
+
+
 const cors=require('cors');
 app.use(cors());
 app.use((req,res,next)=>{
@@ -18,7 +24,7 @@ app.use((req,res,next)=>{
     res.header('Acess-Control-Allow-Headers','Content-Type,Authorization');
     next();
 })
-//middleware
+//middleware section
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);

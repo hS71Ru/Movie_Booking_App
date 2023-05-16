@@ -40,7 +40,7 @@ const hashedPassword=bcrypt.hashSync(password);
         return res.status(500).json({message:"Unexpected Error Occurred"})
     }
 
-    return res.status(201).json({user});
+    return res.status(201).json({id:users._id});
 }
 
 const updateUser=async(req,res,next)=>{

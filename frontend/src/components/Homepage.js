@@ -14,7 +14,7 @@ const Homepage = () => {
 return (
         <Box width={'100%'} height={'100%'} margin={"auto"} marginTop={2}>
           <Box margin={"auto"} width={'70%'} height={'40vh'} padding={2}>
-          <img src="https://www.livemint.com/lm-img/img/2023/05/06/1600x900/Jawan_1683388338951_1683388339123.jpg" alt='' width={"100%"} height={"100%"} />
+          <img src="https://i0.wp.com/www.newsbugz.com/wp-content/uploads/2020/12/salaar-movie-1.jpg?resize=700%2C225&ssl=1" alt='' width={"100%"} height={"100%"} />
 
           </Box>
           <Box padding={5} margin="auto">

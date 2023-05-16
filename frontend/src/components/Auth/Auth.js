@@ -1,8 +1,25 @@
 import React from 'react'
+import AuthForm from './AuthForm';
+import { sendUserAuthRequest } from '../../Api-helpers/api-helpers';
+
+
 
 const Auth = () => {
+// const dispatch = useDispatch();
+// const onResReceived = (data) =>{
+//     console.log(data);
+//     dispatch(userAction.login())
+//     localStorage.setItem("userId", data.id)  }
+const getData = (data) => {
+        console.log("Auth",data)
+    sendUserAuthRequest(data.inputs, data.signup)
+    .then((res)=>console.log(res))
+    .catch((err) => {console.log(err)});
+    }
     return (
-        <div>Auth</div>
+    <div>
+        <AuthForm onSubmit={getData} isAdmin={false}/>
+    </div>
     )
 }
 
