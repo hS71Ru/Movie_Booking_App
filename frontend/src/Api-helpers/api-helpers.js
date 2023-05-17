@@ -13,7 +13,7 @@ export const getAllMovie = async() => {
     return data;
 };
 export const sendUserAuthRequest=async(data,signup)=>{
-    const res=await axios.post(`/users/${signup?"signup":"login"}`,
+    const res=await axios.post(`/user/${signup?"signup":"login"}`,
     {name: signup? data.name:" ",
     email:data.email,
     password:data.password
@@ -39,17 +39,17 @@ export const sendAdminAuthRequest = async (data) => {
     return resData;
 }
 
-// export const getUserBooking = async() => {
-//     const id = localStorage.getItem('userId');
-//     const res = await axios.get(`/users/bookings/${id}`)
-//     .catch((err)=>console.log(err));
-//     if (res.status !== 201) {
-//         return console.log("Unexpected error")
-//     }
-//     const resData = await res.data;
-//     console.log(resData);
-//     return resData;
-// }
+export const getUserBooking = async() => {
+    const id = localStorage.getItem('userId');
+    const res = await axios.get(`/users/bookings/${id}`)
+    .catch((err)=>console.log(err));
+    if (res.status !== 201) {
+        return console.log("Unexpected error")
+    }
+    const resData = await res.data;
+    console.log(resData);
+    return resData;
+}
 
 // export const getMoviedetails=async(id)=>{
 //     const res=await axios.get(`/movies/${id}`).catch((err)=>{console.log(err)})
