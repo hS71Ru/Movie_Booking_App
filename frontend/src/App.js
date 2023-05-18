@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { adminActions, userActions } from "./store";
 import UserProfile from "./Profile/UserProfile";
+import AddMovies from "./components/Movies/AddMovies";
+import AdminProfile from "./Profile/AdminProfile";
+import Booking from "./components/Bookings/Booking";
 
 
 
@@ -35,7 +38,10 @@ function App() {
       <Route path="/movies" element={<Movies />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/auth" element={<Auth />} />
-      <Route path="/user" element={<UserProfile />} />
+      <Route path="/booking/:id" element={<Booking/>} />
+      <Route path="/user" element={<UserProfile/>} />
+      <Route path="/add" element={<AddMovies/>}/>
+      <Route path="/user-admin" element={<AdminProfile/>}/>
 
   
     </Routes>

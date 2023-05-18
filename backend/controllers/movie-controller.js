@@ -1,4 +1,4 @@
-//const mongoose=require('mongoose');
+const mongoose=require('mongoose');
 const jwt=require("jsonwebtoken");
 const Movie=require("../models/Movies");
 const admin=require("../models/Admin");

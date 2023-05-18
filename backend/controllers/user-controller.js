@@ -1,5 +1,7 @@
 const user=require("../models/User");
 const bcrypt=require("bcryptjs");
+const Bookings = require('../models/Bookings');
+
 const getAllUser= async (req, res, next) => {
     let users;
     
@@ -23,7 +25,7 @@ const signup= async(req,next,res)=>{
     !email && email.trim()==="" && 
     !password && password.trim()==="")
     {
-        return res.status(422).json({message:"Invalid Inputs"})
+        return res.status(400).json({message:"Invalid Inputs"})
     }
 
 const hashedPassword=bcrypt.hashSync(password);
@@ -33,14 +35,14 @@ const hashedPassword=bcrypt.hashSync(password);
         users =new user({name,email,password:hashedPassword});
         await users.save();
     } catch(err){
-        return console.log(err);
+        return res.json({err});
     }
 
     if(!users){
         return res.status(500).json({message:"Unexpected Error Occurred"})
     }
 
-    return res.status(201).json({users});
+    return res.status(201).json({id:user._id});
 }
 
 const updateUser=async(req,res,next)=>{
@@ -64,7 +66,7 @@ const updateUser=async(req,res,next)=>{
     if(!users){
         return res.status(500).json({ message :"Something Went Wrong"})
     }
-    res.status(200).json({message:"Updated Succesfully"})
+    res.status(200).json({message:"Updated Succesfully" , user:users})
 }
 
 const deleteUser=async (req,res,next) => {
@@ -81,7 +83,7 @@ const deleteUser=async (req,res,next) => {
         if(!users){
             return res.status(500).json({ message :"Something Went Wrong"})
         }
-        res.status(200).json({message:"Killed Succesfully"})
+        res.status(200).json({message:"Killed Succesfully", user: users})
 }
 
 const login = async (req, res, next) => {
@@ -109,7 +111,34 @@ const login = async (req, res, next) => {
     if (!isPasswordCorrect) {
         return res.status(400).json({ message: "Incorrect Password " })
     }
-    return res.status(200).json({ message: "Login SUccessfully" })
+    return res.status(200).json({ message: "Login SUccessfully" ,id:existingUser._id })
+}
+const getBookingofUser = async (req, res, next) => {
+    const id = req.params.id;
+    let bookings;
+    try {
+        bookings = await Bookings.find({user:id}).populate("user movie");
+    } catch (err) {
+        return console.log(err)
+    }
+    if (!bookings) {
+        return res.status(500).json({message: "Uexpected Error Occured."})
+    }
+    return res.status(201).json({bookings});
 }
 
-module.exports={getAllUser,signup,updateUser, deleteUser, login}
+const getUserById = async (req, res, next) => {
+    const id = req.params.id;
+    let users;
+    try {
+        users = await user.findById(id);
+    } catch (e) {
+        return console.log(e);
+    }
+    if (!users) {
+        return res.status(500).json({message: "Unexpected Error Occured"})
+    }
+    return res.status(200).json({users})
+}
+
+module.exports={getAllUser,signup,updateUser, deleteUser, login, getUserById, getBookingofUser}

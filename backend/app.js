@@ -39,7 +39,8 @@ app.use("/booking", bookingRouter);
 //     res.end("<h1>Welcome Guys</h1>");    //method to fetch api routes
 // } ) 
 
-mongoose.connect('mongodb+srv://hs72ru:Ud0DWBxIpfipEwVJ@cluster1.ndekvys.mongodb.net/Movies?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://hs72ru:Ud0DWBxIpfipEwVJ@cluster1.ndekvys.mongodb.net/Movies?retryWrites=true&w=majority').then(()=>{console.log("DB Connected");
+})
 
 app.listen(3500, ()=>{
     console.log(`Connected to localhost post ${3500}`);

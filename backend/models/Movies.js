@@ -33,16 +33,18 @@ const movieSchema = new mongoose.Schema({
     },
 
     bookings:[{
-        type:String,
+        type:mongoose.Types.ObjectId,
+        ref:"Booking"
     }],
 
     admin:{
-            type:'String',
+            type:mongoose.Types.ObjectId,
+            ref:"admin",
             required:true
         }
 
     
 }) 
 
-const Movie = mongoose.model('movie', movieSchema);
-module.exports = Movie;
+const movie = mongoose.model('Movie', movieSchema);
+module.exports = movie;

@@ -6,3 +6,4 @@ bookingRouter.post('/',Booking);
 bookingRouter.delete('/:id',deleteBooking);
 
 module.exports= bookingRouter;
+;
