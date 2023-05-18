@@ -13,7 +13,7 @@ dotenv.config();
 
 
 //Port Number
-//const PORT=process.env.PORT ||3500
+const PORT=process.env.PORT ||3500
 
 
 const cors=require('cors');
@@ -39,10 +39,12 @@ app.use("/booking", bookingRouter);
 //     res.end("<h1>Welcome Guys</h1>");    //method to fetch api routes
 // } ) 
 
-mongoose.connect('mongodb+srv://hs72ru:Ud0DWBxIpfipEwVJ@cluster1.ndekvys.mongodb.net/Movies?retryWrites=true&w=majority').then(()=>{console.log("DB Connected");
-})
+// mongoose.connect('mongodb+srv://hs72ru:Ud0DWBxIpfipEwVJ@cluster1.ndekvys.mongodb.net/Movies?retryWrites=true&w=majority').then(()=>{console.log("DB Connected");
+// })
 
-app.listen(3500, ()=>{
-    console.log(`Connected to localhost post ${3500}`);
+mongoose.connect(`${process.env.DATABASE}`)
+
+app.listen(PORT, ()=>{
+    console.log(`Database Connected.`);
 })
 
