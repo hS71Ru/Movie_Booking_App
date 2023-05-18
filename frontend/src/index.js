@@ -9,7 +9,7 @@ import {store} from './store'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL="http://localhost:3500/"
+axios.defaults.baseURL="https://movie-booking-app-q8fb.onrender.com"
 root.render(
   <React.StrictMode>
       <BrowserRouter>
