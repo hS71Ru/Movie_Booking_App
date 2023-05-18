@@ -14,7 +14,7 @@ const Homepage = () => {
 return (
         <Box width={'100%'} height={'100%'} margin={"auto"} marginTop={2}>
           <Box margin={'auto'} width={'70%'} height={'40vh'} padding={2}>
-          <img src="https://staticimg.amarujala.com/assets/images/2022/10/07/750x506/aathaparashha_1665141913.jpeg" alt='movie-banner' width={"100%"} height={"100%"} />
+          <img src="https://i.ytimg.com/vi/Zmx2p-4uLmA/maxresdefault.jpg?v=642810ad" alt='movie-banner' width={"100%"} height={"100%"} />
 
           </Box>
           <Box padding={5} margin='auto'>

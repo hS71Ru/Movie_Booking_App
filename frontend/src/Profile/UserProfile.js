@@ -72,7 +72,7 @@ return (
             flexDirection={'column'}
             width="80%" marginRight={10}>
         <List>
-            {Bookings.map((booking, index) => (
+            {Bookings.map((booking,index) => (
             <ListItem
                 sx={{
                 bgcolor: "#00d386",
